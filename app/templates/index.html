@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt Builder</title>
+  <!-- Link to your custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="title">Prompt-Builder</div>
+    <!-- Label that triggers the hidden file input -->
+    <label for="folder-input" class="upload-button">Select Folder</label>
+    <input type="file" id="folder-input" multiple webkitdirectory style="display: none;">
+  </nav>
+
+  <!-- Main content: two columns -->
+  <div class="main-content">
+    <!-- Left Column: file selection tree -->
+    <div id="tree-container" class="section tree-section" style="display: none;">
+      <h2>Folder Contents</h2>
+      <div id="tree-view"></div>
+      <button id="process-btn" class="process-button">Process Selected Files into Prompt</button>
+    </div>
+
+    <!-- Right Column: generated prompt -->
+    <div id="prompt-section" class="section prompt-section" style="display: none;">
+      <h2>Generated Prompt</h2>
+      <textarea id="prompt-output"></textarea>
+      <button id="copy-btn" class="copy-button">Copy Prompt</button>
+    </div>
+  </div>
+
+  <!-- Link to your custom JS -->
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>
